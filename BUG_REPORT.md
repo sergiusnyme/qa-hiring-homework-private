@@ -73,7 +73,7 @@ These findings are based on the current implementation and are represented by th
 
 **Expected:** Tasks appear in domain order: Low, Medium, High.
 
-**Actual:** Tasks are sorted alphabetically by the labels, so High appears before Low and Medium.
+**Actual:** Tasks are sorted alphabetically, so High appears before Low and Medium.
 
 **Automation:** `tests/filter-and-sort.spec.ts`
 

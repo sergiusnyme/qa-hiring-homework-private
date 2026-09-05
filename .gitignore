@@ -12,6 +12,9 @@ dist
 dist-ssr
 test-results
 playwright-report
+tests/*-snapshots
+screenshots
+*.tsbuildinfo
 *.local
 
 # Editor directories and files

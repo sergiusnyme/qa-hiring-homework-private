@@ -4,7 +4,8 @@
 
 - Test plan covers the required task manager user stories and exploratory checks.
 - Playwright e2e tests cover adding, completing, editing, deleting, filtering, and sorting.
-- Three functional regression tests intentionally fail because the current application still contains the documented defects.
+- Three functional regression tests intentionally fail as genuine red tests because the current application still contains the documented defects.
+- The filtering/sorting test also documents the current alphabetical importance-order defect.
 - The visual test generates all 24 importance/label/completeness combinations and submits Argos screenshots.
 - Separate e2e and visual GitHub Actions workflows are included.
 - Both local and CI runs generate an HTML Playwright report; CI uploads it as an artifact.
@@ -12,7 +13,7 @@
 
 ## AI-assisted workflow
 
-The Playwright test generator was used to draft scenarios and locators. Each generated test was reviewed against the README requirements and the application source. Regression tests were kept as expected failures so automated healing cannot conceal known product bugs.
+The Playwright test generator was used to draft scenarios and locators. Each generated test was reviewed against the README requirements and the application source. Regression tests remain genuine failures so automated healing cannot conceal known product bugs.
 
 ## Validation
 
