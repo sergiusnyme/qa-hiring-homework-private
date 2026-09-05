@@ -42,6 +42,7 @@ These tests intentionally have failing assertions against the current implementa
 - Both projects start the Vite app through Playwright `webServer`.
 - `.github/workflows/e2e.yml` and `.github/workflows/visual.yml` run separately.
 - Visual CI requires the `ARGOS_TOKEN` repository secret.
+- CI enables the Argos Playwright reporter so visual screenshots are uploaded rather than only saved locally.
 - Every run generates an HTML report in `playwright-report`; CI uploads it as a workflow artifact.
 - Failed tests capture screenshots that are attached to the HTML report.
 

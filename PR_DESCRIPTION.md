@@ -7,6 +7,7 @@
 - Three functional regression tests intentionally fail as genuine red tests because the current application still contains the documented defects.
 - The filtering/sorting test also documents the current alphabetical importance-order defect.
 - The visual test generates all 24 importance/label/completeness combinations and submits Argos screenshots.
+- CI registers the Argos Playwright reporter so screenshots are uploaded to the connected Argos project.
 - Separate e2e and visual GitHub Actions workflows are included.
 - Both local and CI runs generate an HTML Playwright report; CI uploads it as an artifact.
 - Failed tests automatically attach screenshots to the HTML report.

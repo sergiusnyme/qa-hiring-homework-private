@@ -21,6 +21,8 @@ These findings are based on the current implementation and are represented by th
 
 **Automation:** `tests/regression-edit-preserves-data.spec.ts`
 
+**Manual evidence:** Add `bug-evidence/BUG-001-edit-description.png` and the corresponding video after reproducing manually.
+
 ## BUG-002: Task mutations are not persisted after reload
 
 **Severity:** High
@@ -40,6 +42,8 @@ These findings are based on the current implementation and are represented by th
 
 **Automation:** `tests/regression-mutations-persist.spec.ts`
 
+**Manual evidence:** Add `bug-evidence/BUG-002-persistence.png` and the corresponding video after reproducing manually.
+
 ## BUG-003: Empty titles can be submitted
 
 **Severity:** Medium
@@ -57,6 +61,8 @@ These findings are based on the current implementation and are represented by th
 **Actual:** The button is only visually styled as unavailable. It remains clickable, and the submit handler does not validate or trim the title.
 
 **Automation:** `tests/regression-rejects-empty-title.spec.ts`
+
+**Manual evidence:** Add `bug-evidence/BUG-003-empty-title.png` and the corresponding video after reproducing manually.
 
 ## BUG-004: Importance sorting uses alphabetical order
 
@@ -76,6 +82,8 @@ These findings are based on the current implementation and are represented by th
 **Actual:** Tasks are sorted alphabetically, so High appears before Low and Medium.
 
 **Automation:** `tests/filter-and-sort.spec.ts`
+
+**Manual evidence:** Add `bug-evidence/BUG-004-sorting.png` and the corresponding video after reproducing manually.
 
 ## Exploratory follow-up
 
