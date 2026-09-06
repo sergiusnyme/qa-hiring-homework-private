@@ -15,11 +15,11 @@ test.describe('Regression: task mutations persist', () => {
 
     // Completion should survive reload.
     const reloaded = page.locator('.task-item').filter({ hasText: 'Persistent task' });
-    await expect(reloaded.getByRole('button', { name: 'Uncomplete' })).toBeVisible();
+    await expect.soft(reloaded.getByRole('button', { name: 'Uncomplete' })).toBeVisible();
 
     // Deletion should also survive reload.
     await reloaded.getByRole('button', { name: 'Delete' }).click();
     await page.reload();
-    await expect(page.locator('.task-item').filter({ hasText: 'Persistent task' })).toHaveCount(0);
+    await expect.soft(page.locator('.task-item').filter({ hasText: 'Persistent task' })).toHaveCount(0);
   });
 });

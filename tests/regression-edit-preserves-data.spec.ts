@@ -24,7 +24,7 @@ test.describe('Regression: edit preserves task data', () => {
 
     // The title is loaded correctly; the next assertion should fail because the description is missing.
     await expect(editCard.locator('input')).toHaveValue('Original task');
-    await expect(editCard.locator('textarea')).toHaveValue('Keep this description');
+    await expect.soft(editCard.locator('textarea')).toHaveValue('Keep this description');
 
     // Change only the title and save.
     await editCard.locator('input').fill('Renamed task');
@@ -34,9 +34,9 @@ test.describe('Regression: edit preserves task data', () => {
     const updated = page.locator('.task-item').filter({
       has: page.getByRole('heading', { name: 'Renamed task' }),
     });
-    await expect(updated).toContainText('Keep this description');
-    await expect(updated).toContainText('Importance: High');
-    await expect(updated).toContainText('Label: Social');
-    await expect(updated.getByRole('button', { name: 'Uncomplete' })).toBeVisible();
+    await expect.soft(updated).toContainText('Keep this description');
+    await expect.soft(updated).toContainText('Importance: High');
+    await expect.soft(updated).toContainText('Label: Social');
+    await expect.soft(updated.getByRole('button', { name: 'Uncomplete' })).toBeVisible();
   });
 });
