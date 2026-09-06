@@ -1,4 +1,4 @@
-name: Visual tests
+name: QA - Visual Tests (Argos)
 
 on:
   workflow_dispatch:

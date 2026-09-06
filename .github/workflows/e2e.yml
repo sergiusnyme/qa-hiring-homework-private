@@ -1,4 +1,4 @@
-name: E2E tests
+name: QA - E2E Tests
 
 on:
   push:
