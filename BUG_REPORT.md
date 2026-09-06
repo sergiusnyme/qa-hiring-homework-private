@@ -1,6 +1,14 @@
 # Task Manager Bug Report
 
-These findings are based on the current implementation and are represented by the regression tests in `tests/`. Re-run each scenario manually at `http://localhost:5173/` and attach screenshots or video before submission.
+These findings are based on the current implementation and are represented by the regression tests in `tests/`. Re-run each scenario manually at `http://127.0.0.1:5173/` using a clean browser state.
+
+## Evidence Convention
+
+Screenshots are required evidence; videos are optional. Store manual evidence under `bug-evidence/` using the bug ID in every filename. Use the existing screenshot names referenced below and add the matching optional video when useful.
+
+For `BUG-001`, capture two screenshots: one while the edit form is open showing the missing description, and one after saving the renamed task showing the lost description and reset completion state.
+
+Do not store Playwright `test-results`, `playwright-report`, or generated visual snapshots in `bug-evidence/`. Those are automated artifacts, not manual evidence.
 
 ## BUG-001: Editing a task resets existing values
 
@@ -21,7 +29,13 @@ These findings are based on the current implementation and are represented by th
 
 **Automation:** `tests/regression-edit-preserves-data.spec.ts`
 
-**Manual evidence:** Add `bug-evidence/BUG-001-edit-description.png` and the corresponding video after reproducing manually.
+**Manual evidence:** Add these screenshots after reproducing manually:
+
+![BUG-001 edit form with missing description](bug-evidence/BUG-001-edit-form-missing-description.png)
+
+![BUG-001 after save with data lost](bug-evidence/BUG-001-after-save-data-lost.png)
+
+Optional video: `bug-evidence/BUG-001-edit-description.webm`
 
 ## BUG-002: Task mutations are not persisted after reload
 
@@ -42,7 +56,11 @@ These findings are based on the current implementation and are represented by th
 
 **Automation:** `tests/regression-mutations-persist.spec.ts`
 
-**Manual evidence:** Add `bug-evidence/BUG-002-persistence.png` and the corresponding video after reproducing manually.
+**Manual evidence:**
+
+![BUG-002 persistence after reload](bug-evidence/BUG-002-persistence.png)
+
+Optional video: `bug-evidence/BUG-002-persistence.webm`
 
 ## BUG-003: Empty titles can be submitted
 
@@ -62,7 +80,11 @@ These findings are based on the current implementation and are represented by th
 
 **Automation:** `tests/regression-rejects-empty-title.spec.ts`
 
-**Manual evidence:** Add `bug-evidence/BUG-003-empty-title.png` and the corresponding video after reproducing manually.
+**Manual evidence:**
+
+![BUG-003 empty title accepted](bug-evidence/BUG-003-empty-title.png)
+
+Optional video: `bug-evidence/BUG-003-empty-title.webm`
 
 ## BUG-004: Importance sorting uses alphabetical order
 
@@ -83,7 +105,11 @@ These findings are based on the current implementation and are represented by th
 
 **Automation:** `tests/filter-and-sort.spec.ts`
 
-**Manual evidence:** Add `bug-evidence/BUG-004-sorting.png` and the corresponding video after reproducing manually.
+**Manual evidence:**
+
+![BUG-004 alphabetical importance sorting](bug-evidence/BUG-004-sorting.png)
+
+Optional video: `bug-evidence/BUG-004-sorting.webm`
 
 ## Exploratory follow-up
 
