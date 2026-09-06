@@ -16,12 +16,22 @@ Do not store Playwright `test-results`, `playwright-report`, or generated visual
 
 **Area:** Edit task
 
+**Precondition:** Open `http://127.0.0.1:5173/` with no existing tasks.
+
 **Steps to reproduce:**
 
-1. Add a task with description `Original description`, importance `High`, and label `Social`.
-2. Click `Edit` on that task.
-3. Observe the edit controls.
-4. Change only the title and click `Save`.
+1. Enter `Original task` in `Task Title`.
+2. Enter `Keep this description` in `Task Description`.
+3. Select `High` for Importance.
+4. Select `Social` for Label.
+5. Click `Add Task`.
+6. Click `Complete` and verify the task is completed.
+7. Click `Edit` on the task.
+8. Observe the title, description, importance, and label controls.
+9. Capture the edit form as evidence.
+10. Change only the title to `Renamed task`.
+11. Click `Save`.
+12. Observe the saved task and capture the result as evidence.
 
 **Expected:** Existing description, importance, label, and completion state remain unchanged unless explicitly edited.
 
@@ -43,12 +53,18 @@ Optional video: `bug-evidence/BUG-001-edit-description.webm`
 
 **Area:** Persistence
 
+**Precondition:** Open `http://127.0.0.1:5173/` with no existing tasks.
+
 **Steps to reproduce:**
 
-1. Add a task.
-2. Mark it complete.
-3. Reload the page.
-4. Delete the task and reload again.
+1. Enter `Persistent task` in `Task Title`.
+2. Click `Add Task`.
+3. Click `Complete`.
+4. Reload the page with `Cmd+R`.
+5. Observe the task's action button.
+6. Click `Delete` on the task.
+7. Reload the page again.
+8. Observe whether the deleted task remains absent.
 
 **Expected:** Completion and deletion remain persisted after reload.
 
@@ -68,11 +84,17 @@ Optional video: `bug-evidence/BUG-002-persistence.webm`
 
 **Area:** Add task validation
 
+**Precondition:** Open `http://127.0.0.1:5173/` with no existing tasks.
+
 **Steps to reproduce:**
 
 1. Leave `Task Title` empty.
 2. Click `Add Task`.
-3. Repeat with a whitespace-only title.
+3. Observe the task list and any validation message.
+4. Clear the task list if a task was created.
+5. Enter only spaces, for example `   `, in `Task Title`.
+6. Click `Add Task`.
+7. Observe the task list and any validation message.
 
 **Expected:** Submission is blocked with a clear validation message and no task is created.
 
@@ -92,12 +114,22 @@ Optional video: `bug-evidence/BUG-003-empty-title.webm`
 
 **Area:** Filtering and sorting
 
+**Precondition:** Open `http://127.0.0.1:5173/` with no existing tasks.
+
 **Steps to reproduce:**
 
-1. Add a `High` Work task.
-2. Add a `Low` Work task.
-3. Select the Work label filter.
-4. Select ascending importance sort.
+1. Enter `High work` in `Task Title`.
+2. Select `High` for Importance and `Work` for Label.
+3. Click `Add Task`.
+4. Enter `Low work` in `Task Title`.
+5. Select `Low` for Importance and `Work` for Label.
+6. Click `Add Task`.
+7. Enter `Medium work` in `Task Title`.
+8. Select `Medium` for Importance and `Work` for Label.
+9. Click `Add Task`.
+10. Select `Work` in the label filter.
+11. Select `Sort by Importance (Ascending)`.
+12. Compare the displayed order with `Low`, `Medium`, `High`.
 
 **Expected:** Tasks appear in domain order: Low, Medium, High.
 
